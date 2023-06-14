@@ -15,7 +15,7 @@ func DoWork() int {
 func main() {
 	dataChan := make(chan int)
 
-	go func() { // a  buffered go routine or maybe you add the require output to dataChan i.e dataChan := make(chan int 2)
+	go func() { // a  new go routine cause by default a channel doesnot have space to store data or maybe you add the require space storage to dataChan i.e dataChan := make(chan int 2)
 		wg := &sync.WaitGroup{}
 		for i := 0; i < 10; i++ {
 			wg.Add(1)
