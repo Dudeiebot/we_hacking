@@ -25,7 +25,7 @@ func main() {
 		fmt.Println("Invalid input. Please enter a valid number.")
 		return
 	}
-	t
+
 	timeoutDuration := time.Millisecond * time.Duration(timer)
 	timeoutContext, cancel := context.WithTimeout(context.Background(), timeoutDuration) //understands your timeout well before pushing
 	defer cancel()
