@@ -28,3 +28,7 @@ func (a *Access) Withdraw(amount float64) error {
 	a.balance = newBalance
 	return nil
 }
+
+func (a *Access) GetName() string {
+	return "Access"
+}

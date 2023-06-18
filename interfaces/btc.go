@@ -10,7 +10,7 @@ type BitcoinAccount struct {
 func NewBitcoinAccount() *BitcoinAccount {
 	return &BitcoinAccount{
 		balance: 0,
-		fee:     50,
+		fee:     0.0001,
 	}
 }
 
@@ -29,4 +29,8 @@ func (b *BitcoinAccount) Withdraw(amount float64) error {
 	}
 	b.balance = newBalance
 	return nil
+}
+
+func (b *BitcoinAccount) GetName() string {
+	return "Bitcoin"
 }

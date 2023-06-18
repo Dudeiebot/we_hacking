@@ -29,3 +29,7 @@ func (o *Opay) Withdraw(amount float64) error {
 	o.balance = newBalance
 	return nil
 }
+
+func (o *Opay) GetName() string {
+	return "Opay"
+}
