@@ -3,9 +3,9 @@ package main
 import "fmt"
 
 type IBankAccount interface {
-	GetBalance() int
-	Deposit(amount int)
-	Withdraw(amount int) error
+	GetBalance() float64
+	Deposit(amount float64)
+	Withdraw(amount float64) error
 }
 
 func main() {
@@ -13,15 +13,16 @@ func main() {
 	myAccounts := []IBankAccount{
 		NewAccess(),
 		NewBitcoinAccount(),
+		NewOpay(),
 	}
 
 	for _, account := range myAccounts {
 		account.Deposit(500)
 
 		if err := account.Withdraw(70); err != nil {
-			fmt.Printf("ERR: %d\n", err)
+			fmt.Printf("ERR: %f\n", err)
 		}
 		balance := account.GetBalance()
-		fmt.Printf("balance = %d\n", balance)
+		fmt.Printf("balance = %f\n", balance)
 	}
 }

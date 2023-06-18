@@ -3,7 +3,7 @@ package main
 import "errors"
 
 type Access struct {
-	balance int
+	balance float64
 }
 
 func NewAccess() *Access {
@@ -12,15 +12,15 @@ func NewAccess() *Access {
 	}
 }
 
-func (a *Access) GetBalance() int {
+func (a *Access) GetBalance() float64 {
 	return a.balance
 }
 
-func (a *Access) Deposit(amount int) {
+func (a *Access) Deposit(amount float64) {
 	a.balance += amount
 }
 
-func (a *Access) Withdraw(amount int) error {
+func (a *Access) Withdraw(amount float64) error {
 	newBalance := a.balance - amount
 	if newBalance < 0 {
 		return errors.New("insufficient balance")

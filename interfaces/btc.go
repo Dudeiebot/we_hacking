@@ -3,8 +3,8 @@ package main
 import "errors"
 
 type BitcoinAccount struct {
-	balance int
-	fee     int
+	balance float64
+	fee     float64
 }
 
 func NewBitcoinAccount() *BitcoinAccount {
@@ -14,15 +14,15 @@ func NewBitcoinAccount() *BitcoinAccount {
 	}
 }
 
-func (b *BitcoinAccount) GetBalance() int {
+func (b *BitcoinAccount) GetBalance() float64 {
 	return b.balance
 }
 
-func (b *BitcoinAccount) Deposit(amount int) {
+func (b *BitcoinAccount) Deposit(amount float64) {
 	b.balance += amount
 }
 
-func (b *BitcoinAccount) Withdraw(amount int) error {
+func (b *BitcoinAccount) Withdraw(amount float64) error {
 	newBalance := b.balance - amount - b.fee
 	if newBalance < 0 {
 		return errors.New("insufficient balance")
