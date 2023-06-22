@@ -2,15 +2,17 @@ package main
 
 import (
 	"fmt"
-
-	"golang.org/x/exp/constraints"
 )
 
-func Add[T constraints.Ordered](a T, b T) T {
+type UserID float64
+
+func Add[T int | ~float64](a T, b T) T {
 	return a + b
 }
 
 func main() {
-	result := Add(1.1, 2.2)
+	a := UserID(1)
+	b := UserID(2)
+	result := Add(a, b)
 	fmt.Printf("result: %+v\n", result)
 }
