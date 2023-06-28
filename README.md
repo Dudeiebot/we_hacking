@@ -28,3 +28,8 @@ This section discusses common causes of deadlocks, such as improper use of mutex
 
 Interfaces in Go enable polymorphism and abstraction, allowing different types to be used interchangeably based on shared behaviors. Understanding how to design and implement interfaces effectively is essential for writing flexible and maintainable code.
 In this section, you will explore the concepts of interfaces, interface composition, empty interfaces, type assertions, and type switches. Examples demonstrate how interfaces enable decoupling and facilitate extensibility in Go programs.
+
+## Generics
+
+Generics allow for the creation of reusable code that can work with different types, providing flexibility and code abstraction, it allows the definition of functions and data structures that can operate on different types.
+Generic functions allow you to write code that can work with various types without sacrificing type safety.
