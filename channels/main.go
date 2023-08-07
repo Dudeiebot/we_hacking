@@ -12,6 +12,7 @@ func DoWork() int {
 	return rand.Intn(50)
 }
 
+// Like maps and slices, channels must be created before use, that is where the make chan comes in.
 func main() {
 	dataChan := make(chan int)
 
