@@ -14,7 +14,7 @@ func DoWork() int {
 
 // Like maps and slices, channels must be created before use, that is where the make chan comes in.
 func main() {
-	dataChan := make(chan int)
+	dataChan := make(chan int) //Channel can be buffered "make (chan int, 3)"
 
 	go func() { // a  new go routine cause by default a channel doesnot have space to store data or maybe you add the require space storage to dataChan i.e dataChan := make(chan int 2)
 		wg := &sync.WaitGroup{}
