@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 // import (
 //   "math/rand"
 //   "sync"
+//    "time"
 // )
 // data := <- a read from channel a
 // a <- data  write to channel a
@@ -41,23 +41,35 @@ import (
 // 	}
 // }
 
-func write(ch chan int) {
-	for i := 0; i < 5; i++ {
-		ch <- i
-		fmt.Println("successfully wrote", i, "to ch")
-	}
-	close(ch)
-}
+//These is a new func showing buffered channels
+// func write(ch chan int) {
+// 	for i := 0; i < 5; i++ {
+// 		ch <- i
+// 		fmt.Println("successfully wrote", i, "to ch")
+// 	}
+// 	close(ch)
+// }
+//
+// func main() {
+// 	ch := make(
+// 		chan int,
+// 		2,
+// 	) // remember buffered channel i am using it here and it is just outputting 2 input from func write before it continue with the remaining
+// 	go write(ch)
+// 	time.Sleep(2 * time.Second)
+// 	for v := range ch {
+// 		fmt.Println("read value", v, "from ch")
+// 		time.Sleep(2 * time.Second)
+// 	}
+// }
 
 func main() {
-	ch := make(
-		chan int,
-		2,
-	) // remember buffered channel i am using it here and it is just outputting 2 input from func write before it continue with the remaining
-	go write(ch)
-	time.Sleep(2 * time.Second)
-	for v := range ch {
-		fmt.Println("read value", v, "from ch")
-		time.Sleep(2 * time.Second)
-	}
+	datach := make(chan string, 3)
+	datach <- "hello"
+	datach <- "world"
+	close(datach)
+	fmt.Println("These is the capacity of datach:", cap(datach))
+	fmt.Println("These is the length of datach:", len(datach))
+	fmt.Println("We are reading a value from datach:", <-datach)
+	fmt.Println("Here is our new lenght after we read that value:", len(datach))
 }
