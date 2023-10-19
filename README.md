@@ -1,4 +1,5 @@
-# Advanced Go Concepts
+
+# Some Go Concepts
 
 This repository provides an overview and examples of advanced Go concepts, including channels, context, deadlocks, and interfaces. These concepts are essential for building concurrent and robust applications in Go.
 
