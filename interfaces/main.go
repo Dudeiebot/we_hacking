@@ -12,7 +12,6 @@ type IBankAccount interface {
 }
 
 func main() {
-
 	myAccounts := []IBankAccount{
 		NewAccess(),
 		NewBitcoinAccount(),
@@ -30,5 +29,4 @@ func main() {
 		balance := account.GetBalance()
 		fmt.Printf("Account: %s, balance = %f\n", account.GetName(), balance)
 	}
-
 }
