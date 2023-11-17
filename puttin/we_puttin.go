@@ -22,3 +22,5 @@ func main() {
 // 	}
 // 	return messages, nil
 // }
+
+// so there is quote.Hello() for returning greeting, not all that necessary tho
