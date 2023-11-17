@@ -3,6 +3,8 @@
 
 This repository provides an overview and examples of advanced Go concepts, including channels, context, deadlocks, and interfaces. These concepts are essential for building concurrent and robust applications in Go.
 
+Also you shall test, you must definitely write your test
+
 # Table of Contents
 
 * Channels
