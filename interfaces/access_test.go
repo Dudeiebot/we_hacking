@@ -39,7 +39,8 @@ func TestGetName(t *testing.T) {
 	}
 }
 
-// Table driven approach
+// Table driven approach because i prefer it also
+// it is very easy to understand also
 
 //func checkBalance(t *testing.T, access Access, want float64) {
 // 	t.Helper()
