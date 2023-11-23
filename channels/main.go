@@ -9,8 +9,15 @@ import (
 //   "sync"
 //    "time"
 // )
-// data := <- a read from channel a
-// a <- data  write to channel a
+
+/*
+
+First: you create your channel with the make function and it can be buffered or unbuffered
+data := <- a read/receive from channel and a
+a <- data  write/send to channel a
+and finally clode your channel anyway you like to close it
+
+*/
 
 // func DoWork() int {
 // 	time.Sleep(time.Second)
