@@ -17,6 +17,8 @@ data := <- a read/receive from channel and a
 a <- data  write/send to channel a
 and finally clode your channel anyway you like to close it
 
+channel are untyped and you can assign any data types or sometimes custom data types
+
 */
 
 // func DoWork() int {
